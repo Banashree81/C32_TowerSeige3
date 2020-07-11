@@ -135,17 +135,17 @@ function keyPressed(){
 
 async function getBGColor(){
 
-  var response = await fetch('http://worldclockapi.com/api/json/est/now');
+  var response = await fetch('https://worldtimeapi.org/api/timezone/Asia/Kolkata');
   
   var JSONResponse = await response.json();
   
-  var curDateTime = JSONResponse.currentDateTime;
-  console.log(curDateTime);
+  var dateTime = JSONResponse.datetime;
+  console.log(dateTime);
 
-  var hour = curDateTime.slice(11,13);
+  var hour = dateTime.slice(11,13);
   if(hour >= 6 && hour < 19 ){
     bgColor = "#FEFBC8"
-  } else {
+  } else{
     bgColor = "#000000"
   }
 
